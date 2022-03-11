@@ -14,8 +14,7 @@ app.use(cors({
 app.get('/weather-api', async (req: Request, res: Response) => {
   const {data} = await axios.get(
     `https://api.openweathermap.org/data/2.5/weather?zip=${req.query.searchTerm}&appid=${process.env.WEATHER_KEY}`);
-  console.log(data);
-  res.end()
+  res.send(data)
 });
 
 app.listen(3000, () => console.log(`Listening on port 3000...`));
