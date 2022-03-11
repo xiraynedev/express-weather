@@ -8,7 +8,7 @@ const app = express();
 require('dotenv').config();
 
 app.use(cors({
-  origin: 'http://localhost:8080'
+  origin: '*'
 }));
 
 app.get('/weather-api', async (req: Request, res: Response) => {
